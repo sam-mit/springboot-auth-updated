@@ -29,4 +29,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile("org.hsqldb:hsqldb")
+	compile('javax.xml.bind:jaxb-api:2.3.0')
+	compile("org.springframework.boot:spring-boot-starter-security")
+	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+	compile("io.jsonwebtoken:jjwt:0.9.1")
 }
