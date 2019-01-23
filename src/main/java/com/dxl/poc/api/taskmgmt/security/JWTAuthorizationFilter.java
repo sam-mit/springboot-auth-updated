@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated.security;
+package com.dxl.poc.api.taskmgmt.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -19,8 +19,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import static com.auth0.samples.authapi.springbootauthupdated.security.SecurityConstants.*;
-
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
     public JWTAuthorizationFilter(AuthenticationManager authenticationManager) {
@@ -31,9 +29,9 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
                                     FilterChain chain) throws IOException, ServletException {
-        final String header       = req.getHeader(HEADER_STRING);
+        final String header       = req.getHeader(SecurityConstants.HEADER_STRING);
 
-        if (header == null || !header.startsWith(TOKEN_PREFIX)) {
+        if (header == null || !header.startsWith(SecurityConstants.TOKEN_PREFIX)) {
             chain.doFilter(req, res);
             return;
         }
@@ -44,14 +42,14 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     }
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
-        String token = request.getHeader(HEADER_STRING);
+        String token = request.getHeader(SecurityConstants.HEADER_STRING);
         if (token != null) {
             // parse the token.
-            final JwtParser     jwtParser       = Jwts.parser().setSigningKey(SECRET);
-            final Jws           parseClaimsJws  = jwtParser.parseClaimsJws(token.replace(TOKEN_PREFIX,""));
+            final JwtParser     jwtParser       = Jwts.parser().setSigningKey(SecurityConstants.SECRET);
+            final Jws           parseClaimsJws  = jwtParser.parseClaimsJws(token.replace(SecurityConstants.TOKEN_PREFIX,""));
             final Claims        claims          = (Claims) parseClaimsJws.getBody();
             final String        user            = claims.getSubject();
-            final Collection    authorities     = Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(","))
+            final Collection    authorities     = Arrays.stream(claims.get(SecurityConstants.AUTHORITIES_KEY).toString().split(","))
                                                     .map(SimpleGrantedAuthority::new)
                                                     .collect(Collectors.toList());
 

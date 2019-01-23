@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated.task;
+package com.dxl.poc.api.taskmgmt.task;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

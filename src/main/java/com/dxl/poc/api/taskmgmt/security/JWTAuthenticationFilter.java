@@ -1,6 +1,6 @@
-package com.auth0.samples.authapi.springbootauthupdated.security;
+package com.dxl.poc.api.taskmgmt.security;
 
-import com.auth0.samples.authapi.springbootauthupdated.user.ApplicationUser;
+import com.dxl.poc.api.taskmgmt.user.ApplicationUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.*;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,7 +21,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
 
-import static com.auth0.samples.authapi.springbootauthupdated.security.SecurityConstants.*;
+import static com.dxl.poc.api.taskmgmt.security.SecurityConstants.*;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 

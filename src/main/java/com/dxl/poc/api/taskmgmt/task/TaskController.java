@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated.task;
+package com.dxl.poc.api.taskmgmt.task;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.Assert;

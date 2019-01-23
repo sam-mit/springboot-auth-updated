@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated.user;
+package com.dxl.poc.api.taskmgmt.user;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;

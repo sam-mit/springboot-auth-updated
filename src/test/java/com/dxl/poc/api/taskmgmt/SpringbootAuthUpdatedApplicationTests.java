@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated;
+package com.dxl.poc.api.taskmgmt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

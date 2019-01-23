@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.springbootauthupdated.user;
+package com.dxl.poc.api.taskmgmt.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
